@@ -34,6 +34,12 @@
             <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
           </li>
           <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#reviews">Отзывы</a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="index.html#faq">Вопросы</a>
+          </li>
+          <li class="site-nav__item">
             <a class="site-nav__link" href="index.html#contacts">Обратная связь</a>
           </li>
         </ul>
@@ -93,6 +99,53 @@
             Заказать
           </button>
         </article>
+      </div>
+    </section>
+
+    <section class="section reviews" id="reviews">
+      <h2 class="section__title">Отзывы покупателей</h2>
+
+      <div class="reviews__list">
+        <article class="review">
+          <p class="review__text">Быстро оформила заказ, товар пришёл в срок. Всё понравилось!</p>
+          <p class="review__author">Анна, Москва</p>
+        </article>
+
+        <article class="review">
+          <p class="review__text">Удобный каталог и понятная форма заявки. Буду заказывать ещё.</p>
+          <p class="review__author">Игорь, Казань</p>
+        </article>
+
+        <article class="review">
+          <p class="review__text">Менеджер быстро перезвонил и ответил на все вопросы.</p>
+          <p class="review__author">Мария, Тверь</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <h2 class="section__title">Часто задаваемые вопросы</h2>
+
+      <div class="faq__list">
+        <details class="faq__item">
+          <summary class="faq__question">Как оформить заказ?</summary>
+          <p class="faq__answer">Нажмите кнопку «Заказать» в карточке товара и заполните форму заявки.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Сколько стоит доставка?</summary>
+          <p class="faq__answer">Стоимость доставки зависит от региона и уточняется менеджером.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли вернуть товар?</summary>
+          <p class="faq__answer">Да, товар можно вернуть в течение 14 дней после получения.</p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Как связаться с магазином?</summary>
+          <p class="faq__answer">Контакты указаны на странице «Контакты».</p>
+        </details>
       </div>
     </section>
 
@@ -213,5 +266,7 @@
   <p class="success-message" id="success-message" hidden>
     Форма успешно отправлена!
   </p>
+
+  <a class="scroll-top" href="#" aria-label="Наверх">&uarr;</a>
 </body>
 </html>
