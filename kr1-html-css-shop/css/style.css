@@ -123,6 +123,7 @@ a:focus-visible {
 
 .site-header {
   background-color: var(--color-surface);
+  position: sticky;
 }
 
 .site-header__inner {
