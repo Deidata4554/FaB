@@ -74,6 +74,15 @@
 
       <div class="products-grid">
         <article class="product-card product-card--featured">
+          <img
+            class="product-card__image"
+            src="images/preview.jpg"
+            alt="Фото товара «Товар 1»"
+            width="736"
+            height="806"
+            loading="lazy"
+            decoding="async"
+          >
           <h3 class="product-card__title">Товар 1</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1000 руб.</p>
@@ -83,6 +92,15 @@
         </article>
 
         <article class="product-card">
+          <img
+            class="product-card__image"
+            src="images/product-2.jpg"
+            alt="Фото товара «Товар 2»"
+            width="960"
+            height="959"
+            loading="lazy"
+            decoding="async"
+          >
           <h3 class="product-card__title">Товар 2</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 1500 руб.</p>
@@ -92,6 +110,15 @@
         </article>
 
         <article class="product-card">
+          <img
+            class="product-card__image"
+            src="images/product-3.jpg"
+            alt="Фото товара «Товар 3»"
+            width="960"
+            height="1282"
+            loading="lazy"
+            decoding="async"
+          >
           <h3 class="product-card__title">Товар 3</h3>
           <p class="product-card__description">Краткое описание учебного товара.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
@@ -109,16 +136,37 @@
         <article class="review">
           <p class="review__text">Быстро оформила заказ, товар пришёл в срок. Всё понравилось!</p>
           <p class="review__author">Анна, Москва</p>
+          <p class="review__rating" role="img" aria-label="Оценка 5 из 5">
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+          </p>
         </article>
 
         <article class="review">
           <p class="review__text">Удобный каталог и понятная форма заявки. Буду заказывать ещё.</p>
           <p class="review__author">Игорь, Казань</p>
+          <p class="review__rating" role="img" aria-label="Оценка 4 из 5">
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star" aria-hidden="true">&#9733;</span>
+          </p>
         </article>
 
         <article class="review">
           <p class="review__text">Менеджер быстро перезвонил и ответил на все вопросы.</p>
           <p class="review__author">Мария, Тверь</p>
+          <p class="review__rating" role="img" aria-label="Оценка 3 из 5">
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star review__star--filled" aria-hidden="true">&#9733;</span>
+            <span class="review__star" aria-hidden="true">&#9733;</span>
+            <span class="review__star" aria-hidden="true">&#9733;</span>
+          </p>
         </article>
       </div>
     </section>
@@ -129,22 +177,45 @@
       <div class="faq__list">
         <details class="faq__item">
           <summary class="faq__question">Как оформить заказ?</summary>
-          <p class="faq__answer">Нажмите кнопку «Заказать» в карточке товара и заполните форму заявки.</p>
+          <p class="faq__answer">
+            Выберите товар в каталоге или в разделе «Популярные товары» и нажмите
+            кнопку «Заказать» в его карточке. В открывшемся окне укажите имя, телефон
+            и при желании комментарий к заказу, затем отправьте заявку. Менеджер
+            свяжется с вами в течение рабочего дня, чтобы подтвердить наличие,
+            уточнить адрес и удобное время доставки.
+          </p>
         </details>
 
         <details class="faq__item">
           <summary class="faq__question">Сколько стоит доставка?</summary>
-          <p class="faq__answer">Стоимость доставки зависит от региона и уточняется менеджером.</p>
+          <p class="faq__answer">
+            Стоимость доставки зависит от региона, веса и габаритов заказа. По городу
+            курьерская доставка обычно занимает 1–2 дня, в другие регионы — от 3 до 7
+            дней через транспортную компанию. При заказе от 5000 рублей доставка по
+            городу бесплатная. Точную сумму и сроки менеджер назовёт при подтверждении
+            заявки.
+          </p>
         </details>
 
         <details class="faq__item">
           <summary class="faq__question">Можно ли вернуть товар?</summary>
-          <p class="faq__answer">Да, товар можно вернуть в течение 14 дней после получения.</p>
+          <p class="faq__answer">
+            Да, товар надлежащего качества можно вернуть в течение 14 дней после
+            получения, если сохранены его товарный вид, упаковка и документ о покупке.
+            Если товар оказался бракованным, мы бесплатно заменим его или вернём деньги.
+            Чтобы оформить возврат, напишите нам или позвоните — менеджер подскажет,
+            как отправить товар обратно.
+          </p>
         </details>
 
         <details class="faq__item">
           <summary class="faq__question">Как связаться с магазином?</summary>
-          <p class="faq__answer">Контакты указаны на странице «Контакты».</p>
+          <p class="faq__answer">
+            Все способы связи указаны на странице «Контакты»: телефон, электронная
+            почта и адрес пункта выдачи. Мы отвечаем по будням с 9:00 до 18:00.
+            Также можно оставить заявку через форму обратной связи — менеджер
+            перезвонит в рабочее время.
+          </p>
         </details>
       </div>
     </section>
@@ -164,14 +235,21 @@
     <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
-  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
+  <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title" aria-describedby="order-dialog-product">
+    <button class="order-dialog__close" type="button" id="close-order-dialog-icon" aria-label="Закрыть окно">&times;</button>
+
     <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+    <p class="order-dialog__product" id="order-dialog-product"></p>
 
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
       <input id="selected-product" name="selected-product" type="hidden">
 
+      <p class="order-form__note">Поля, отмеченные <span class="order-form__required" aria-hidden="true">*</span>, обязательны для заполнения.</p>
+
       <div class="order-form__field">
-        <label class="order-form__label" for="order-name">Имя</label>
+        <label class="order-form__label" for="order-name">
+          Имя <span class="order-form__required" aria-hidden="true">*</span>
+        </label>
         <input
           class="order-form__input"
           id="order-name"
@@ -180,12 +258,16 @@
           placeholder="Введите ваше имя"
           minlength="2"
           autocomplete="given-name"
+          aria-describedby="order-name-error"
           required
         >
+        <p class="order-form__error" id="order-name-error" aria-live="polite"></p>
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-email">E-mail</label>
+        <label class="order-form__label" for="order-email">
+          E-mail <span class="order-form__required" aria-hidden="true">*</span>
+        </label>
         <input
           class="order-form__input"
           id="order-email"
@@ -193,12 +275,16 @@
           type="email"
           placeholder="example@mail.ru"
           autocomplete="email"
+          aria-describedby="order-email-error"
           required
         >
+        <p class="order-form__error" id="order-email-error" aria-live="polite"></p>
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-phone">Телефон</label>
+        <label class="order-form__label" for="order-phone">
+          Телефон <span class="order-form__required" aria-hidden="true">*</span>
+        </label>
         <input
           class="order-form__input"
           id="order-phone"
@@ -207,9 +293,12 @@
           inputmode="tel"
           placeholder="+7 (900) 000-00-00"
           pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          autocomplete="tel"
+          aria-describedby="order-phone-hint order-phone-error"
           required
         >
-        <small class="order-form__hint">Формат: +7 (900) 000-00-00</small>
+        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        <p class="order-form__error" id="order-phone-error" aria-live="polite"></p>
       </div>
 
       <div class="order-form__field">
@@ -223,13 +312,16 @@
       </div>
 
       <div class="order-form__field">
-        <label class="order-form__label" for="order-topic">Тема заявки</label>
-        <select class="order-form__select" id="order-topic" name="topic" required>
+        <label class="order-form__label" for="order-topic">
+          Тема заявки <span class="order-form__required" aria-hidden="true">*</span>
+        </label>
+        <select class="order-form__select" id="order-topic" name="topic" aria-describedby="order-topic-error" required>
           <option value="">Выберите тему</option>
           <option value="product">Заказ товара</option>
           <option value="consultation">Консультация</option>
           <option value="delivery">Доставка</option>
         </select>
+        <p class="order-form__error" id="order-topic-error" aria-live="polite"></p>
       </div>
 
       <div class="order-form__field">
@@ -250,10 +342,12 @@
             id="order-agreement"
             name="agreement"
             type="checkbox"
+            aria-describedby="order-agreement-error"
             required
           >
-          Я согласен на обработку данных
+          Я согласен на обработку данных <span class="order-form__required" aria-hidden="true">*</span>
         </label>
+        <p class="order-form__error" id="order-agreement-error" aria-live="polite"></p>
       </div>
 
       <div class="order-form__actions">
@@ -263,7 +357,7 @@
     </form>
   </dialog>
 
-  <p class="success-message" id="success-message" hidden>
+  <p class="success-message" id="success-message" role="status" hidden>
     Форма успешно отправлена!
   </p>
 
