@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # ВАЖНО: путь к папке, содержимое которой станет корнем сайта
-          path: './kr1-html-css-shop'
+          path: './kr2-bootstrap'
 
   deploy:
     needs: build
