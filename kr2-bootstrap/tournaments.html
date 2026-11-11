@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d2e">
+  <title>Турниры клуба — Мипл</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/bootstrap.bundle.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="visually-hidden-focusable skip-link" href="#main">К содержимому</a>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark" aria-label="Главное меню">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html"><img class="brand__icon" src="assets/logo.svg" width="38" height="38" alt=""> Мипл</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav me-auto gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог игр</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">Игротеки</a></li>
+            <li class="nav-item"><a class="nav-link active" href="tournaments.html" aria-current="page">Турниры</a></li>
+            <li class="nav-item"><a class="nav-link" href="booking.html">Бронирование</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О клубе</a></li>
+          </ul>
+          <a class="btn btn-primary" href="booking.html">Забронировать стол</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+
+  <div class="container page-intro">
+    <p class="page-intro__crumb"><a href="index.html">Главная</a> / Турниры клуба</p>
+    <h1>Турниры клуба</h1>
+    <p class="mb-0">Проверьте свою стратегию за одним столом с другими игроками.</p>
+  </div>
+  <section class="container section pt-0">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6"><img class="media media--hero" src="assets/catan.jpg" alt="Игровое поле «Колонизаторов»" loading="lazy"></div>
+      <div class="col-lg-6">
+        <h2>Турнир по «Колонизаторам»</h2>
+        <p>Индивидуальный зачёт. Перед первой партией ведущий объяснит формат раундов и порядок подсчёта очков.</p>
+        <button class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#tournament-form" aria-controls="tournament-form" aria-expanded="false">Подать заявку</button>
+      </div>
+    </div>
+    <div class="collapse mt-4" id="tournament-form">
+      <div class="surface">
+        <h2>Заявка на участие</h2>
+        <form class="row g-3" data-request="tournament">
+
+            <div class="col-md-6">
+              <label class="form-label" for="tournament-name">Имя</label>
+              <input class="form-control" id="tournament-name" name="name" required maxlength="80">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="tournament-phone">Телефон</label>
+              <input class="form-control" id="tournament-phone" name="phone" type="tel" autocomplete="tel" required minlength="10" maxlength="22">
+            </div>
+          <div class="col-12"><button class="btn btn-primary">Сохранить заявку</button></div>
+          <p class="col-12 mb-0" role="status" data-status></p>
+        </form>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <a class="brand" href="index.html"><img class="brand__icon" src="assets/logo.svg" width="38" height="38" alt=""> Мипл</a>
+          <p class="mb-0 mt-2">Клуб настольных игр</p>
+        </div>
+        <address class="col-md-5 footer__contacts mb-0">
+          <a class="footer__contact" href="https://yandex.ru/maps/?text=Москва%2C%20проспект%20Вернадского%2C%2080"><svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg> Москва, проспект Вернадского, 80</a>
+          <a class="footer__contact" href="booking.html"><svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 16.5v3a1.5 1.5 0 0 1-1.6 1.5C10.6 20.4 3.6 13.4 3 4.6A1.5 1.5 0 0 1 4.5 3h3L9 8l-2 2a13 13 0 0 0 7 7l2-2 5 1.5Z"/></svg> Связаться с клубом</a>
+        </address>
+        <nav class="col-md-3 footer__links" aria-label="Ссылки в подвале">
+          <a href="events.html">Афиша событий</a>
+          <a href="rules.html">Правила клуба</a>
+          <a href="about.html#photos">Авторы фотографий</a>
+        </nav>
+      </div>
+      <p class="footer__copyright">© 2026 Клуб «Мипл». Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>

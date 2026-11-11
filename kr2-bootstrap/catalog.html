@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d2e">
+  <title>Каталог игр — Мипл</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/bootstrap.bundle.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="visually-hidden-focusable skip-link" href="#main">К содержимому</a>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark" aria-label="Главное меню">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html"><img class="brand__icon" src="assets/logo.svg" width="38" height="38" alt=""> Мипл</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav me-auto gap-lg-2">
+            <li class="nav-item"><a class="nav-link active" href="catalog.html" aria-current="page">Каталог игр</a></li>
+            <li class="nav-item"><a class="nav-link" href="events.html">Игротеки</a></li>
+            <li class="nav-item"><a class="nav-link" href="tournaments.html">Турниры</a></li>
+            <li class="nav-item"><a class="nav-link" href="booking.html">Бронирование</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О клубе</a></li>
+          </ul>
+          <a class="btn btn-primary" href="booking.html">Забронировать стол</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+
+  <div class="container page-intro">
+    <p class="page-intro__crumb"><a href="index.html">Главная</a> / Каталог игр</p>
+    <h1>Каталог игр</h1>
+    <p class="mb-0">Найдите настолку для вашей компании.</p>
+  </div>
+  <section class="container section pt-0">
+    <div class="row g-4">
+      <aside class="col-lg-3">
+        <form class="surface" data-catalog-filters>
+          <h2>Фильтры</h2>
+          <label class="form-label" for="game-search">Поиск по названию</label>
+          <input class="form-control mb-3" id="game-search" name="search" type="search">
+          <label class="form-label" for="game-genre">Жанр</label>
+          <select class="form-select mb-3" id="game-genre" name="genre">
+            <option value="">Все жанры</option>
+            <option>Семейные</option><option>Стратегии</option><option>Абстрактные</option>
+          </select>
+          <label class="form-label" for="game-players">Количество игроков</label>
+          <select class="form-select mb-3" id="game-players" name="players">
+            <option value="">Любое</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label class="form-label" for="game-duration">Длительность партии</label>
+          <select class="form-select mb-3" id="game-duration" name="duration">
+            <option value="">Любая</option>
+            <option value="45">До 45 минут</option>
+            <option value="60">До 60 минут</option>
+            <option value="90">До 90 минут</option>
+          </select>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="favorites" name="favorites">
+            <label class="form-check-label" for="favorites">Только избранное</label>
+          </div>
+          <button class="btn btn-outline-success" type="reset">Сбросить фильтры</button>
+        </form>
+      </aside>
+      <div class="col-lg-9">
+        <div class="section__heading">
+          <h2>Подборка игр</h2>
+          <select class="form-select catalog__sort" aria-label="Сортировка игр" data-catalog-sort>
+            <option value="">По умолчанию</option>
+            <option value="name">По названию</option>
+            <option value="duration">По длительности</option>
+          </select>
+        </div>
+        <p hidden role="status" data-catalog-empty>По выбранным фильтрам игр нет.</p>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3" data-catalog>
+      <div class="col catalog__item" data-title="Каркассон" data-game="carcassonne" data-genre="Семейные" data-min="2" data-max="5" data-minutes="35">
+        <article class="game-card h-100">
+          <a href="carcassonne.html"><img class="game-card__photo" src="assets/carcassonne.jpg" alt="Игровое поле: Каркассон" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="carcassonne.html">Каркассон</a></h3>
+            <p class="game-card__meta">2–5 игроков · 35 минут</p>
+            <p>Выкладывайте плитки с дорогами, городами и полями. Размещайте миплов и получайте очки за завершённые объекты.</p>
+            <a class="btn btn-outline-success" href="carcassonne.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col catalog__item" data-title="Колонизаторы" data-game="catan" data-genre="Стратегии" data-min="3" data-max="4" data-minutes="90">
+        <article class="game-card h-100">
+          <a href="catan.html"><img class="game-card__photo" src="assets/catan.jpg" alt="Игровое поле: Колонизаторы" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="catan.html">Колонизаторы</a></h3>
+            <p class="game-card__meta">3–4 игрока · 60–90 минут</p>
+            <p>Добывайте ресурсы, торгуйте с соседями, стройте дороги и поселения на острове Катан.</p>
+            <a class="btn btn-outline-success" href="catan.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col catalog__item" data-title="Билет на поезд" data-game="ticket-to-ride" data-genre="Семейные" data-min="2" data-max="5" data-minutes="60">
+        <article class="game-card h-100">
+          <a href="ticket-to-ride.html"><img class="game-card__photo" src="assets/ticket-to-ride.jpg" alt="Игровое поле: Билет на поезд" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="ticket-to-ride.html">Билет на поезд</a></h3>
+            <p class="game-card__meta">2–5 игроков · 30–60 минут</p>
+            <p>Собирайте карты вагонов, прокладывайте железнодорожные маршруты и соединяйте города из билетов.</p>
+            <a class="btn btn-outline-success" href="ticket-to-ride.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col catalog__item" data-title="Азул" data-game="azul" data-genre="Абстрактные" data-min="2" data-max="4" data-minutes="45">
+        <article class="game-card h-100">
+          <a href="azul.html"><img class="game-card__photo" src="assets/azul.jpg" alt="Игровое поле: Азул" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="azul.html">Азул</a></h3>
+            <p class="game-card__meta">2–4 игрока · 30–45 минут</p>
+            <p>Выбирайте цветные плитки и составляйте узоры на стене дворца.</p>
+            <a class="btn btn-outline-success" href="azul.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <a class="brand" href="index.html"><img class="brand__icon" src="assets/logo.svg" width="38" height="38" alt=""> Мипл</a>
+          <p class="mb-0 mt-2">Клуб настольных игр</p>
+        </div>
+        <address class="col-md-5 footer__contacts mb-0">
+          <a class="footer__contact" href="https://yandex.ru/maps/?text=Москва%2C%20проспект%20Вернадского%2C%2080"><svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg> Москва, проспект Вернадского, 80</a>
+          <a class="footer__contact" href="booking.html"><svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 16.5v3a1.5 1.5 0 0 1-1.6 1.5C10.6 20.4 3.6 13.4 3 4.6A1.5 1.5 0 0 1 4.5 3h3L9 8l-2 2a13 13 0 0 0 7 7l2-2 5 1.5Z"/></svg> Связаться с клубом</a>
+        </address>
+        <nav class="col-md-3 footer__links" aria-label="Ссылки в подвале">
+          <a href="events.html">Афиша событий</a>
+          <a href="rules.html">Правила клуба</a>
+          <a href="about.html#photos">Авторы фотографий</a>
+        </nav>
+      </div>
+      <p class="footer__copyright">© 2026 Клуб «Мипл». Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>

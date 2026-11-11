@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123d2e">
+  <title>Игротеки и события — Мипл</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="assets/bootstrap.bundle.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="visually-hidden-focusable skip-link" href="#main">К содержимому</a>
+  <header class="header">
+    <nav class="navbar navbar-expand-lg" data-bs-theme="dark" aria-label="Главное меню">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html"><img class="brand__icon" src="assets/logo.svg" width="38" height="38" alt=""> Мипл</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navigation">
+          <ul class="navbar-nav me-auto gap-lg-2">
+            <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог игр</a></li>
+            <li class="nav-item"><a class="nav-link active" href="events.html" aria-current="page">Игротеки</a></li>
+            <li class="nav-item"><a class="nav-link" href="tournaments.html">Турниры</a></li>
+            <li class="nav-item"><a class="nav-link" href="booking.html">Бронирование</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">О клубе</a></li>
+          </ul>
+          <a class="btn btn-primary" href="booking.html">Забронировать стол</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main id="main">
+
+  <div class="container page-intro">
+    <p class="page-intro__crumb"><a href="index.html">Главная</a> / Игротеки и события</p>
+    <h1>Игротеки и события</h1>
+    <p class="mb-0">Приходите своей компанией или найдите новых друзей за игровым столом.</p>
+  </div>
+  <section class="container section pt-0">
+    <div class="d-flex flex-wrap gap-2 mb-4" aria-label="Фильтр событий">
+      <button class="btn btn-outline-success active" data-event-filter="" aria-pressed="true">Все события</button>
+      <button class="btn btn-outline-success" data-event-filter="meetup" aria-pressed="false">Игротеки</button>
+      <button class="btn btn-outline-success" data-event-filter="new" aria-pressed="false">Для новичков</button>
+      <button class="btn btn-outline-success" data-event-filter="family" aria-pressed="false">Семейные игры</button>
+    </div>
+    <div class="d-grid gap-3">
+      <article class="surface event-card" data-event-type="meetup">
+        <img class="media event-card__photo" src="assets/club.jpg" alt="" loading="lazy">
+        <div>
+          <h2>Большая игротека</h2>
+          <p>Свободные партии в настольные игры. Приходите с друзьями или присоединяйтесь к компании на месте.</p>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#event-modal" data-event-name="Большая игротека">Записаться</button>
+      </article>
+      <article class="surface event-card" data-event-type="new">
+        <img class="media event-card__photo" src="assets/carcassonne.jpg" alt="" loading="lazy">
+        <div>
+          <h2>Вечер для новичков</h2>
+          <p>Ведущий объяснит правила и поможет начать первую партию.</p>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#event-modal" data-event-name="Вечер для новичков">Записаться</button>
+      </article>
+      <article class="surface event-card" data-event-type="family">
+        <img class="media event-card__photo" src="assets/azul.jpg" alt="" loading="lazy">
+        <div>
+          <h2>Вечер семейных игр</h2>
+          <p>Короткие партии в «Азул», «Каркассон» и другие семейные игры.</p>
+        </div>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#event-modal" data-event-name="Вечер семейных игр">Записаться</button>
+      </article>
+    </div>
+  </section>
+  <section class="container section pt-0">
+    <div class="callout">
+      <h2>Впервые в «Мипле»? Приходите — мы всё объясним.</h2>
+      <p class="mb-0">Выберите вечер для новичков или попросите ведущего помочь с первой партией.</p>
+    </div>
+  </section>
+  <div class="modal fade" id="event-modal" tabindex="-1" aria-labelledby="event-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="event-modal-title">Запись на событие</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <form class="row g-3" data-request="event">
+            <input type="hidden" name="event">
+
+            <div class="col-md-6">
+              <label class="form-label" for="event-name">Имя</label>
+              <input class="form-control" id="event-name" name="name" required maxlength="80">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label" for="event-phone">Телефон</label>
+              <input class="form-control" id="event-phone" name="phone" type="tel" autocomplete="tel" required minlength="10" maxlength="22">
+            </div>
+            <div class="col-12"><button class="btn btn-primary">Сохранить заявку</button></div>
+            <p class="col-12 mb-0" role="status" data-status></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4">
+          <a class="brand" href="index.html"><img class="brand__icon" src="assets/logo.svg" width="38" height="38" alt=""> Мипл</a>
+          <p class="mb-0 mt-2">Клуб настольных игр</p>
+        </div>
+        <address class="col-md-5 footer__contacts mb-0">
+          <a class="footer__contact" href="https://yandex.ru/maps/?text=Москва%2C%20проспект%20Вернадского%2C%2080"><svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg> Москва, проспект Вернадского, 80</a>
+          <a class="footer__contact" href="booking.html"><svg class="footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 16.5v3a1.5 1.5 0 0 1-1.6 1.5C10.6 20.4 3.6 13.4 3 4.6A1.5 1.5 0 0 1 4.5 3h3L9 8l-2 2a13 13 0 0 0 7 7l2-2 5 1.5Z"/></svg> Связаться с клубом</a>
+        </address>
+        <nav class="col-md-3 footer__links" aria-label="Ссылки в подвале">
+          <a href="events.html">Афиша событий</a>
+          <a href="rules.html">Правила клуба</a>
+          <a href="about.html#photos">Авторы фотографий</a>
+        </nav>
+      </div>
+      <p class="footer__copyright">© 2026 Клуб «Мипл». Все права защищены.</p>
+    </div>
+  </footer>
+</body>
+</html>
