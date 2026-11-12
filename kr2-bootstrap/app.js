@@ -5,7 +5,28 @@ const gameTitles = {
   catan: 'Колонизаторы',
   'ticket-to-ride': 'Билет на поезд',
   azul: 'Азул',
+  dixit: 'Диксит',
+  codenames: 'Кодовые имена',
+  pandemic: 'Пандемия',
+  splendor: 'Роскошь',
 };
+
+const tablesPerSlot = 3;
+
+function remainingTables(requests, { date, zone, time }) {
+  const occupied = requests.filter(request =>
+    request.type === 'booking'
+    && request.date === date
+    && request.zone === zone
+    && request.time === time
+  ).length;
+  return Math.max(0, tablesPerSlot - occupied);
+}
+
+function tableCountLabel(count) {
+  if (count === 0) return 'Нет мест';
+  return count === 1 ? '1 стол' : `${count} стола`;
+}
 
 function loadItems(key) {
   try {
@@ -136,10 +157,27 @@ function setupBooking() {
   const game = new URLSearchParams(location.search).get('game');
   if (Object.hasOwn(gameTitles, game)) form.elements.notes.value = gameTitles[game];
 
-  const slots = document.querySelectorAll('[data-time]');
+  const slots = [...document.querySelectorAll('[data-time]')];
+  const timeField = form.elements.time;
   function updateSlots() {
+    const requests = loadItems('mipl-requests');
+    const date = form.elements.date.value;
+    const zone = form.elements.zone.value;
+
     for (const slot of slots) {
-      const selected = slot.dataset.time === form.elements.time.value;
+      const time = slot.dataset.time;
+      const count = remainingTables(requests, { date, zone, time });
+      slot.disabled = count === 0;
+      slot.querySelector('.booking-slot__count').textContent = tableCountLabel(count);
+      const option = [...timeField.options].find(item => item.value === time);
+      option.disabled = slot.disabled;
+    }
+
+    if (!timeField.value || timeField.selectedOptions[0]?.disabled) {
+      timeField.value = slots.find(slot => !slot.disabled)?.dataset.time || '';
+    }
+    for (const slot of slots) {
+      const selected = slot.dataset.time === timeField.value;
       slot.classList.toggle('booking-slot--selected', selected);
       slot.setAttribute('aria-pressed', String(selected));
     }
@@ -147,11 +185,18 @@ function setupBooking() {
 
   for (const slot of slots) {
     slot.addEventListener('click', () => {
-      form.elements.time.value = slot.dataset.time;
+      timeField.value = slot.dataset.time;
       updateSlots();
     });
   }
-  form.elements.time.addEventListener('change', updateSlots);
+  timeField.addEventListener('change', updateSlots);
+  form.elements.date.addEventListener('change', updateSlots);
+  form.elements.zone.addEventListener('change', updateSlots);
+  form.addEventListener('booking-saved', updateSlots);
+  window.addEventListener('storage', event => {
+    if (event.key === 'mipl-requests' || event.key === null) updateSlots();
+  });
+  updateSlots();
 }
 
 function setupRequests() {
@@ -170,9 +215,16 @@ function setupRequests() {
       }
       const fields = Object.fromEntries(new FormData(form));
       const requests = loadItems('mipl-requests');
+      const isBooking = form.dataset.request === 'booking';
+      if (isBooking && (!fields.time || remainingTables(requests, fields) === 0)) {
+        status.textContent = 'Выберите время, на которое есть свободный стол.';
+        form.dispatchEvent(new Event('booking-saved'));
+        return;
+      }
       requests.push({ ...fields, type: form.dataset.request, createdAt: new Date().toISOString() });
       const saved = saveItems('mipl-requests', requests);
       status.textContent = saved ? 'Заявка сохранена на этом устройстве.' : 'Не удалось сохранить заявку.';
+      if (saved && isBooking) form.dispatchEvent(new Event('booking-saved'));
     });
   }
 }

@@ -50,7 +50,11 @@
           <label class="form-label" for="game-genre">Жанр</label>
           <select class="form-select mb-3" id="game-genre" name="genre">
             <option value="">Все жанры</option>
-            <option>Семейные</option><option>Стратегии</option><option>Абстрактные</option>
+            <option>Семейные</option>
+            <option>Стратегии</option>
+            <option>Абстрактные</option>
+            <option>Для компании</option>
+            <option>Кооперативные</option>
           </select>
           <label class="form-label" for="game-players">Количество игроков</label>
           <select class="form-select mb-3" id="game-players" name="players">
@@ -59,10 +63,14 @@
             <option>3</option>
             <option>4</option>
             <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
           </select>
           <label class="form-label" for="game-duration">Длительность партии</label>
           <select class="form-select mb-3" id="game-duration" name="duration">
             <option value="">Любая</option>
+            <option value="30">До 30 минут</option>
             <option value="45">До 45 минут</option>
             <option value="60">До 60 минут</option>
             <option value="90">До 90 минут</option>
@@ -87,7 +95,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-3" data-catalog>
       <div class="col catalog__item" data-title="Каркассон" data-game="carcassonne" data-genre="Семейные" data-min="2" data-max="5" data-minutes="35">
         <article class="game-card h-100">
-          <a href="carcassonne.html"><img class="game-card__photo" src="assets/carcassonne.jpg" alt="Игровое поле: Каркассон" loading="lazy"></a>
+          <a href="carcassonne.html"><img class="game-card__photo" src="assets/carcassonne.jpg" alt="Коробка игры «Каркассон»" loading="lazy"></a>
           <div class="game-card__body">
             <h3 class="game-card__title"><a href="carcassonne.html">Каркассон</a></h3>
             <p class="game-card__meta">2–5 игроков · 35 минут</p>
@@ -99,7 +107,7 @@
 
       <div class="col catalog__item" data-title="Колонизаторы" data-game="catan" data-genre="Стратегии" data-min="3" data-max="4" data-minutes="90">
         <article class="game-card h-100">
-          <a href="catan.html"><img class="game-card__photo" src="assets/catan.jpg" alt="Игровое поле: Колонизаторы" loading="lazy"></a>
+          <a href="catan.html"><img class="game-card__photo" src="assets/catan.jpg" alt="Коробка игры «Колонизаторы»" loading="lazy"></a>
           <div class="game-card__body">
             <h3 class="game-card__title"><a href="catan.html">Колонизаторы</a></h3>
             <p class="game-card__meta">3–4 игрока · 60–90 минут</p>
@@ -111,7 +119,7 @@
 
       <div class="col catalog__item" data-title="Билет на поезд" data-game="ticket-to-ride" data-genre="Семейные" data-min="2" data-max="5" data-minutes="60">
         <article class="game-card h-100">
-          <a href="ticket-to-ride.html"><img class="game-card__photo" src="assets/ticket-to-ride.jpg" alt="Игровое поле: Билет на поезд" loading="lazy"></a>
+          <a href="ticket-to-ride.html"><img class="game-card__photo" src="assets/ticket-to-ride.jpg" alt="Коробка игры «Билет на поезд»" loading="lazy"></a>
           <div class="game-card__body">
             <h3 class="game-card__title"><a href="ticket-to-ride.html">Билет на поезд</a></h3>
             <p class="game-card__meta">2–5 игроков · 30–60 минут</p>
@@ -123,12 +131,60 @@
 
       <div class="col catalog__item" data-title="Азул" data-game="azul" data-genre="Абстрактные" data-min="2" data-max="4" data-minutes="45">
         <article class="game-card h-100">
-          <a href="azul.html"><img class="game-card__photo" src="assets/azul.jpg" alt="Игровое поле: Азул" loading="lazy"></a>
+          <a href="azul.html"><img class="game-card__photo" src="assets/azul.jpg" alt="Коробка игры «Азул»" loading="lazy"></a>
           <div class="game-card__body">
             <h3 class="game-card__title"><a href="azul.html">Азул</a></h3>
             <p class="game-card__meta">2–4 игрока · 30–45 минут</p>
             <p>Выбирайте цветные плитки и составляйте узоры на стене дворца.</p>
             <a class="btn btn-outline-success" href="azul.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col catalog__item" data-title="Диксит" data-game="dixit" data-genre="Для компании" data-min="3" data-max="8" data-minutes="30">
+        <article class="game-card h-100">
+          <a href="dixit.html"><img class="game-card__photo" src="assets/dixit.webp" alt="Коробка игры «Диксит»" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="dixit.html">Диксит</a></h3>
+            <p class="game-card__meta">3–8 игроков · 30 минут</p>
+            <p>Придумывайте ассоциации к необычным иллюстрациям и угадывайте, какую карту загадал рассказчик.</p>
+            <a class="btn btn-outline-success" href="dixit.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col catalog__item" data-title="Кодовые имена" data-game="codenames" data-genre="Для компании" data-min="4" data-max="8" data-minutes="15">
+        <article class="game-card h-100">
+          <a href="codenames.html"><img class="game-card__photo" src="assets/codenames.jpg" alt="Коробка игры «Кодовые имена»" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="codenames.html">Кодовые имена</a></h3>
+            <p class="game-card__meta">4–8 игроков · 15 минут</p>
+            <p>Две команды ищут своих агентов среди карточек со словами. Капитан связывает сразу несколько карточек одной подсказкой.</p>
+            <a class="btn btn-outline-success" href="codenames.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col catalog__item" data-title="Пандемия" data-game="pandemic" data-genre="Кооперативные" data-min="2" data-max="4" data-minutes="45">
+        <article class="game-card h-100">
+          <a href="pandemic.html"><img class="game-card__photo" src="assets/pandemic.jpg" alt="Коробка игры «Пандемия»" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="pandemic.html">Пандемия</a></h3>
+            <p class="game-card__meta">2–4 игрока · 45 минут</p>
+            <p>Команда специалистов сдерживает вспышки болезней и ищет лекарства. У каждого игрока есть своё особое умение.</p>
+            <a class="btn btn-outline-success" href="pandemic.html">Об игре и правила</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="col catalog__item" data-title="Роскошь" data-game="splendor" data-genre="Стратегии" data-min="2" data-max="4" data-minutes="30">
+        <article class="game-card h-100">
+          <a href="splendor.html"><img class="game-card__photo" src="assets/splendor.jpg" alt="Коробка игры «Роскошь»" loading="lazy"></a>
+          <div class="game-card__body">
+            <h3 class="game-card__title"><a href="splendor.html">Роскошь</a></h3>
+            <p class="game-card__meta">2–4 игрока · 30 минут</p>
+            <p>Собирайте жетоны самоцветов и покупайте карты развития, которые дают постоянные скидки и очки престижа.</p>
+            <a class="btn btn-outline-success" href="splendor.html">Об игре и правила</a>
           </div>
         </article>
       </div>
@@ -151,7 +207,6 @@
         <nav class="col-md-3 footer__links" aria-label="Ссылки в подвале">
           <a href="events.html">Афиша событий</a>
           <a href="rules.html">Правила клуба</a>
-          <a href="about.html#photos">Авторы фотографий</a>
         </nav>
       </div>
       <p class="footer__copyright">© 2026 Клуб «Мипл». Все права защищены.</p>
